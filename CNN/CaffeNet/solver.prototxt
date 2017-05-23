@@ -1,0 +1,13 @@
+net: "train_val.prototxt"
+test_initialization: false
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 50000
+display: 20
+max_iter: 160000
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 10000
+snapshot_prefix: "textTopicNet_train_Wikipedia_ImageCLEF"
+solver_mode: GPU
