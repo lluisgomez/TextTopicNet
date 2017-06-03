@@ -111,7 +111,7 @@ for cl in classes:
   bestC=-1
 
   scaler = preprocessing.StandardScaler().fit(X)
-  joblib.dump(scaler, './generated_data/voc_2007_classification/features_'+layer+'scaler.pkl')
+  joblib.dump(scaler, './generated_data/voc_2007_classification/features_'+layer+'/scaler.pkl')
   X_scaled = scaler.transform(X)
   XX_scaled = scaler.transform(XX)
 
@@ -129,7 +129,7 @@ for cl in classes:
   X_all = np.concatenate((X, XX), axis=0)
   scaler = preprocessing.StandardScaler().fit(X_all)
   X_all = scaler.transform(X_all)
-  joblib.dump(scaler, './generated_data/voc_2007_classification/features_'+layer+'scaler.pkl')
+  joblib.dump(scaler, './generated_data/voc_2007_classification/features_'+layer+'/scaler.pkl')
   print X.shape, XX.shape, X_all.shape
   y_all = np.concatenate((y, yy))
   clf = svm.LinearSVC(C=bestC)
@@ -164,7 +164,7 @@ for cl in classes:
 
   print "  ... loading model from "+svm_out_path+'clf_'+cl+'_'+layer+'.pkl'
   clf = joblib.load(svm_out_path+'/clf_'+cl+'_'+layer+'.pkl')
-  scaler = joblib.load('./generated_data/voc_2007_classification/features_'+layer+'scaler.pkl')
+  scaler = joblib.load('./generated_data/voc_2007_classification/features_'+layer+'/scaler.pkl')
   X = scaler.transform(X)
 
 #  y_ = clf.predict(X)
