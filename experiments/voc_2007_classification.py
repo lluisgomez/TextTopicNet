@@ -3,6 +3,7 @@ import random
 import json
 import numpy as np
 import caffe
+from termcolor import colored
 from PIL import Image
 import matplotlib.pyplot as plt
 from sklearn import svm
@@ -12,7 +13,7 @@ from sklearn import preprocessing
 
 ### Start : Extract the representation from specified layer and save in generated_data direcroty ###
 if len(sys.argv)<2:
-  print 'You must provide the layer from wich to extract features. e.g. fc7, fc6, pool5, ...'
+  print colored('You must provide the layer from wich to extract features. e.g. fc7, fc6, pool5, ...', 'red')
   quit()
 
 layer = sys.argv[1]
@@ -22,6 +23,7 @@ caffe.set_mode_gpu()
 # Specify paths to model prototxt and model weights
 model_def = '../CNN/CaffeNet/deploy.prototxt'
 model_weights = '../CNN/CaffeNet/TextTopicNet_Wikipedia_ImageCLEF_40Topics.caffemodel'
+print colored('Model weights are loaded from : ' + model_weights, 'green')
 
 # Initialize caffe model instnce with given weights and model prototxt
 net = caffe.Net(model_def,      # defines the structure of the model\n",
@@ -35,11 +37,13 @@ MEAN = np.array([104.00698793, 116.66876762, 122.67891434])
 # Specify path to directory containing PASCAL VOC2007 images
 img_root = '/media/DADES/datasets/VOC2007/VOCdevkit/VOC2007/JPEGImages/'
 out_root = './generated_data/voc_2007_classification/features_'+layer+'/'
+if not os.path.exists(out_root):
+  os.makedirs(out_root)
 
 # Get list of all file (image) names for VOC2007
 onlyfiles = [f for f in os.listdir(img_root) if os.path.isfile(os.path.join(img_root, f))]
 
-print 'Starting image representation generation'
+print colored('Starting image representation generation', 'green')
 # For given layer and each given input image, generate corresponding representation
 for sample in onlyfiles:
   im_filename = img_root+sample
@@ -62,12 +66,14 @@ for sample in onlyfiles:
   np.save(f, output_prob)
   f.close()
 
-print 'Completed image representation generation.'
+print colored('Completed image representation generation.', 'green')
 ### End : Generating image representations for all images ###
 
 ### Start : Learn one vs all SVMs for each target class ###
 features_root = out_root
 svm_out_path = './generated_data/voc_2007_classification/'+ layer + '_SVM'
+if not os.path.exists(svm_out_path):
+  os.makedirs(svm_out_path)
 classes = ['aeroplane','bicycle','bird','boat','bottle','bus','car','cat','chair','cow','diningtable','dog','horse','motorbike','person','pottedplant','sheep','sofa','train','tvmonitor'] # List of classes in PASCAL VOC2007
 cs = [13,14,15,16,17,18] # List of margins for SVM
 
@@ -81,7 +87,7 @@ mAP2 = 0
 
 for cl in classes:
 
-  print "Do grid search for class "+cl
+  print colored("Do grid search for class "+cl, 'green')
   with open(gt_root+cl+gt_train_sufix) as f:
     content = f.readlines()
   aux = np.load(features_root+content[0].split(' ')[0]+'.jpg')
@@ -143,6 +149,8 @@ print "\nValidation mAP: "+str(mAP2/float(len(classes)))+" (this is an underesti
 
 ### Start : Testing of learned SVMs ###
 res_root = './generated_data/voc_2007_classification/'+layer+'_SVM/RES_labels/'
+if not os.path.exists(res_root):
+  os.makedirs(res_root)
 
 mAP2=0
 
@@ -181,5 +189,5 @@ for cl in classes:
     idx = idx+1
   fr.close()
 
-print "\nTest mAP: "+str(mAP2/float(len(classes)))+" (this is an underestimate, you must run VOC_eval.m for mAP taking into account don't care objects)"
+print colored("\nTest mAP: "+str(mAP2/float(len(classes)))+" (this is an underestimate, you must run VOC_eval.m for mAP taking into account don't care objects)", 'green')
 ### End : Testing of learned SVMs ###
