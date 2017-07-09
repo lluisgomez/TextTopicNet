@@ -47,7 +47,7 @@ python learn_LDA_model.py
 python generate_train_labels.py
 ```
 
-This will generate the LDA model files (``ldamodel40.lda`` and ``ldamodel40.lda.state``) that can be used to project new texts into the learned topic space; and a file ``training_labels40.json`` with the trainig labels (topic space probabilities) for all images in our training dataset. If you want to skip this step and directly train the CNN model you can download the files from the following links: [ldamodel40.lda](https://drive.google.com/open?id=0B52HmBFhEpdCZUM1MXNoR1h3RFU) / [ldamodel40.lda.state](https://drive.google.com/open?id=0B52HmBFhEpdCWDV6SXZGaDlYcWs) / [training_labels40.json](https://drive.google.com/open?id=0B52HmBFhEpdCTDZTSDFMVWswNEU)
+This will generate the LDA model files (``ldamodel40.lda`` and ``ldamodel40.lda.state``) that can be used to project new texts into the learned topic space; and a file ``training_labels40.json`` with the trainig labels (topic space probabilities) for all images in our training dataset. If you want to skip this step and directly train the CNN model you can download the files from the following links: [ldamodel40.lda](https://drive.google.com/open?id=0B52HmBFhEpdCZUM1MXNoR1h3RFU) / [ldamodel40.lda.state](https://drive.google.com/open?id=0B52HmBFhEpdCWDV6SXZGaDlYcWs) / [dictionary.dict](https://drive.google.com/open?id=0B52HmBFhEpdCTVJKa3hnS3VRVkE) / [training_labels40.json](https://drive.google.com/open?id=0B52HmBFhEpdCTDZTSDFMVWswNEU)
 
 ### Train CNNs
 
