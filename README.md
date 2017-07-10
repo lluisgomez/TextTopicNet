@@ -67,3 +67,7 @@ The same model can be used for the following multi-modal retrieval tasks:
 * Image query vs. Text database: First projecting all text documents into the topic space using the learned LDA model. And then projecting the image query into the topic space using the CNN model, and find the nearest neighbour texts on the database.
 * Text query vs. Image database: same as before but the other way around.
 
+
+### Experiments
+
+The scripts in the ``experiments/`` folder reproduce the results of the experiments in our paper.
