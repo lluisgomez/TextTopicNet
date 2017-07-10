@@ -71,3 +71,5 @@ The same model can be used for the following multi-modal retrieval tasks:
 ### Experiments
 
 The scripts in the ``experiments/`` folder reproduce the results of the experiments in our paper.
+Run the script ``experiments/multi_modal_retrieval.py``  for multi-modal retrieval experiment on Wikipedia dataset.
+Run the script ``experiments/voc_2007_classification.py`` for image classification experiment on PASCAL VOC 2007.
