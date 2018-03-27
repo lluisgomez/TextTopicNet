@@ -10,6 +10,9 @@ from gensim import utils, corpora, models
 from gensim.corpora.wikicorpus import remove_markup
 
 from preprocess_text import preprocess
+import logging
+
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 NUM_TOPICS = 40
 db_dir  = '../data/ImageCLEF_Wikipedia/'
