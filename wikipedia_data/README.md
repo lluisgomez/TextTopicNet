@@ -10,6 +10,9 @@ Y. Patel, L. Gomez, R. Gomez, M. Rusiñol, D. Karatzas, C.V. Jawahar.
 }
 ```
 ## Training Dataset
-[Download the image-text article co-occurring dataset from the following link](http://datasets.cvc.uab.es/rrc/wikipedia_data/)
 
-
+Download the image-text article co-occurring dataset from [here](http://datasets.cvc.uab.es/rrc/wikipedia_data/)
+Make sure to download the following:
+* All the images [here](http://datasets.cvc.uab.es/rrc/wikipedia_data/images/)
+* Wikipedia text corpus dump [here](http://datasets.cvc.uab.es/rrc/wikipedia_data/text_dump/)
+* List of images [here]() 
