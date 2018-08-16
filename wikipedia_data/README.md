@@ -15,4 +15,4 @@ Download the image-text article co-occurring dataset from [here](http://datasets
 Make sure to download the following:
 * All the images [here](http://datasets.cvc.uab.es/rrc/wikipedia_data/images/)
 * Wikipedia text corpus dump [here](http://datasets.cvc.uab.es/rrc/wikipedia_data/text_dump/)
-* List of images [here]() 
+* List of images [here](http://datasets.cvc.uab.es/rrc/wikipedia_data/list_of_images.json) 
