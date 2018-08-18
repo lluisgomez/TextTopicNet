@@ -20,9 +20,7 @@ Make sure to download the following:
 
 ## Code Snippets
 Following are some utility functions to access the data:
-*The wikipedia text corpus dump associates each article with an unique id. To obtain the set of text documents used for training in our paper (text articles only with atleast 50 words), run the following command:
-``python get_all_docs.py <path_to_list_of_all_images>``
-* To obtain the list of images for a given text article number, run the following command:
-``python get_images.py <path_to_list_of_all_images> <path_to_root_directory> <article_number>``
+*The wikipedia text corpus dump associates each article with an unique id. To obtain the set of text documents used for training in our paper (text articles only with atleast 50 words), run the following command: ``python get_all_docs.py <path_to_list_of_all_images>``
+* To obtain the list of images for a given text article number, run the following command: ``python get_images.py <path_to_list_of_all_images> <path_to_root_directory> <article_number>``
 
 ``get_images.py`` also provides a snippet to generate a python dictionary with key as text article number and value as list of co-occuring images.
