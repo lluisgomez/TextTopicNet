@@ -12,11 +12,11 @@ Our CNN learns to predict the semantic context in which images appear as illustr
 If you make use of the code in this repository for scientific purposes, we appreciate it if you cite our paper:
 
 ```
-@inproceedings{GomezPatelCVPR2017self,
-  title     = {Self-supervised learning of visual features through embedding images into text topic spaces},
-  author    = {Lluis Gomez, Yash Patel, Marçal Rusiñol, Dimosthenis Karatzas, and C.V. Jawahar},
-  booktitle = {CVPR},
-  year      = {2017}
+@inproceedings{gomez2017self,
+  title={Self-supervised learning of visual features through embedding images into text topic spaces},
+  author={Gomez, Lluis and Patel, Yash and Rusinol, Mar{\c{c}}al and Karatzas, Dimosthenis and Jawahar, CV},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  year={2017}
 }
 ```
 
