@@ -16,6 +16,7 @@ If you make use of the code in this repository for scientific purposes, we appre
   title={Self-supervised learning of visual features through embedding images into text topic spaces},
   author={Gomez, Lluis and Patel, Yash and Rusinol, Mar{\c{c}}al and Karatzas, Dimosthenis and Jawahar, CV},
   booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={4230--4239},
   year={2017}
 }
 ```
